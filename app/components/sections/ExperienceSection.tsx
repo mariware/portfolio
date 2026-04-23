@@ -2,6 +2,7 @@
 
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useState, useEffect } from 'react'
 
 type Experience = {
@@ -10,6 +11,8 @@ type Experience = {
   date: string
   bullets: string[]
 }
+
+gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 function parseExperience(md: string): Experience[] {
   const entries = md.split('\n# ').filter(Boolean)
@@ -66,7 +69,7 @@ export default function ExperienceSection() {
   }, []);
 
   useGSAP(() => {
-    gsap.set('#notes', { x: -40 })
+    gsap.set('#notes', { x: 440 })
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -79,13 +82,13 @@ export default function ExperienceSection() {
       }
     })
 
-    tl.to('#notes', { x: -880, ease: 'none' })
+    tl.to('#notes', { x: -440, ease: 'none' })
   })
 
   return (
-    <div id='wrapper' className='translate-x-1/2'>
+    <div id='wrapper' className='flex flex-col'>
       <span
-        className='border-x-4 border-y font-handwriting h-fit text-3xl py-2 px-4'
+        className='border-x-4 border-y font-handwriting h-fit text-3xl py-2 px-4 place-self-center'
         style={{
           borderImageSource: `url('/tapes/tape_7.svg')`,
           borderImageSlice: '4 10 4 10 fill',
@@ -94,7 +97,7 @@ export default function ExperienceSection() {
       >
         Experience
       </span>
-      <div id='notes' className='min-h-80 mt-8 w-max flex flex-row items-center justify-center gap-12 sm:gap-12'>
+      <div id='notes' className='h-80 mt-8 w-280 flex flex-row items-center justify-center gap-12 sm:gap-12'>
         {data.map((exp, i) => (
           <ExperienceCard id={i} key={i} exp={exp} />
         ))}

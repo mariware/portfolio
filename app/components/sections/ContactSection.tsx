@@ -54,22 +54,21 @@ export default function ContactSection() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '#envelope',
-        start: 'top center',
-        end: '+=160',
+        start: 'center center',
         pin: true,
         scrub: 1,
         pinSpacing: true
       }
     })
 
-    tl.to('#opening', { rotateX: 180, transformOrigin: '50% 0%', duration: 1.5, ease: 'none' })
-      .set('#content', { zIndex: 2, delay: 1 }, '<')
+    tl.to('#opening', { rotateX: 180, transformOrigin: '50% 0%', duration: 0.5, ease: 'none' })
+      .set('#content', { zIndex: 2, delay: 0.5 }, '<')
       .set('#opening', { zIndex: 1 }, '<')
-      .to('#content', { yPercent: -25, duration: 1, ease: 'none' }, '<')
+      .to('#content', { yPercent: -25, duration: 2, ease: 'none' }, '<')
   })
 
   return (
-    <div id='envelope' className='relative flex justify-center bg-youth h-48 w-64 -rotate-4 my-12 shadow-[-2px_8px_0px_rgba(49,48,51,0.25)]'>
+    <div id='envelope' className='relative flex justify-center bg-youth h-48 w-64 -rotate-4 shadow-[-2px_8px_0px_rgba(49,48,51,0.25)]'>
       <EnvelopeBody />
       <EnvelopeOpening />
       <div id='content' className='absolute top-0 left-2 w-60 h-40 bg-light border border-crack flex flex-col items-center p-4 shadow-[-2px_8px_0px_rgba(49,48,51,0.25)]'>

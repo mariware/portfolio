@@ -17,16 +17,16 @@ function TapeButton({ tape, children, href }: { tape: number; children: React.Re
 export default function Header() {
   const navItems = [
     { label: "Home", href: "#top" },
-    { label: "Projects", href: "#booklet" },
-    { label: "Art", href: "#drawings" },
-    { label: "Contact", href: "#envelope" }
+    { label: "Projects", href: "#projects" },
+    { label: "Art", href: "#experience" },
+    { label: "Contact", href: "#contact" }
   ]
 
   const tapeNumbers = Array.from({ length: 7 }, (_, i) => i + 1)
     .sort(() => Math.random() - 0.5)
 
   return (
-    <nav className="flex py-4 gap-4 sm:gap-8">
+    <nav className="flex py-4 gap-4 sm:gap-8 h-15">
       {navItems.map((item, i) => (
         <TapeButton key={item.label} tape={tapeNumbers[i]} href={item.href}>
           {item.label}

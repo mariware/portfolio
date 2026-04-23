@@ -2,10 +2,10 @@ import { IconBrandGithub, IconBrandLinkedin, IconMail } from '@tabler/icons-reac
 
 export default function MainSection() {
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-center gap-12 sm:gap-12">
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 sm:py-16">
       {/* Profile Image */}
       <div className="border border-crack shadow-[-2px_8px_0px_rgba(49,48,51,0.25)] -rotate-4">
-        <img src="/photos/profile.jpg" className="w-fit max-h-64 aspect-3/4 border-8 border-light" />
+        <img src="/photos/profile.jpg" className="w-fit h-48 sm:max-h-64 aspect-3/4 border-8 border-light" />
       </div>
 
       {/* Name Tag */}
