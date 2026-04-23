@@ -1,6 +1,7 @@
-function TapeButton({ tape, children }: { tape: number; children: React.ReactNode }) {
+function TapeButton({ tape, children, href }: { tape: number; children: React.ReactNode, href: any }) {
   return (
-    <button
+    <a
+      href={href}
       className="border-x-4 border-y font-handwriting"
       style={{
         borderImageSource: `url('/tapes/tape_${tape}.svg')`,
@@ -9,19 +10,26 @@ function TapeButton({ tape, children }: { tape: number; children: React.ReactNod
       }}
     >
       <div className="px-2">{children}</div>
-    </button>
+    </a>
   )
 }
 
 export default function Header() {
-  const navItems = ["Home", "Projects", "Art", "Contact"]
-  const tapeNumbers = Array.from({ length: 7 }, (_, i) => i + 1).sort(() => Math.random() - 0.5)
+  const navItems = [
+    { label: "Home", href: "#top" },
+    { label: "Projects", href: "#booklet" },
+    { label: "Art", href: "#drawings" },
+    { label: "Contact", href: "#envelope" }
+  ]
+
+  const tapeNumbers = Array.from({ length: 7 }, (_, i) => i + 1)
+    .sort(() => Math.random() - 0.5)
 
   return (
     <nav className="flex py-4 gap-4 sm:gap-8">
-      {navItems.map((label, i) => (
-        <TapeButton key={label} tape={tapeNumbers[i]}>
-          {label}
+      {navItems.map((item, i) => (
+        <TapeButton key={item.label} tape={tapeNumbers[i]} href={item.href}>
+          {item.label}
         </TapeButton>
       ))}
     </nav>

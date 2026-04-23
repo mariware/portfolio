@@ -37,8 +37,8 @@ function ExperienceCard({ id, exp }: { id: number, exp: Experience }) {
   return (
     <div id={`exp_${id}`} className='flex flex-col' style={{ transform: `rotate(${rotation}deg)` }}>
       <div className='relative flex flex-col p-4 pt-6 text-center max-w-60 border border-crack shadow-[-2px_6px_0px_rgba(49,48,51,0.25)] leading-4' style={{ backgroundColor: `${colors[id]}` }}>
-        <div className='absolute -top-2 place-self-center shadow-[inset_2px_-2px_0px_rgba(49,48,51,0.25)] size-6 rounded-full border border-crack
-          before:absolute before:-top-0.5 before:-right-0.5 before:size-5 before:bg-inherit before:shadow-[inset_2px_-2px_0px_rgba(49,48,51,0.25)] before:rounded-full before:border before:border-crack'
+        <div className='absolute -top-2 place-self-center shadow-[inset_2px_-2px_0px_rgba(49,48,51,0.25)] size-6 rounded-full border border-crack'
+          // before:absolute before:-top-0.5 before:-right-0.5 before:size-5 before:bg-inherit before:shadow-[inset_2px_-2px_0px_rgba(49,48,51,0.25)] before:rounded-full before:border before:border-crack'
           style={{ backgroundColor: colors[(id + 1) % colors.length] }}
         />
         <p className='font-handwriting text-xl font-semibold'>{exp.title}</p>
