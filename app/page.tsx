@@ -4,6 +4,7 @@ import MainSection from "./components/sections/MainSection"
 import ProjectsSection from "./components/sections/ProjectsSection"
 import ExperienceSection from "./components/sections/ExperienceSection"
 import ContactSection from "./components/sections/ContactSection"
+import ArtSection from "./components/sections/ArtSection"
 
 export default function Home() {
   return (
@@ -15,6 +16,8 @@ export default function Home() {
         <ExperienceSection />
         <br id='projects' />
         <ProjectsSection />
+        <br id='art' />
+        <ArtSection />
         <br id='contact' />
         <ContactSection />
         <Header />

@@ -186,7 +186,7 @@ export default function ProjectsSection() {
           <img src='/photos/resumed.png' className='size-8' />
         </div>
         <a
-          className='font-handwriting text-xl font-semibold hover:text-[#51A2FF] hover:after:content-["_↗"]'
+          className='font-handwriting text-xl font-semibold hover:text-[#51A2FF] after:content-["_↗"] sm:after:content-[""] hover:after:content-["_↗"]'
           href='https://resumed-by-mariware.vercel.app/'
           target='_blank' rel='noopener noreferrer'
         >
